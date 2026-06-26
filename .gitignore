@@ -55,3 +55,14 @@ events.out.tfevents.*
 .git/
 github_publish/
 publish/
+
+# Curated SweetDB application results for the paper figures.
+!SweetDB_results_202606_LLM_GA/
+!SweetDB_results_202606_LLM_GA/**/
+!SweetDB_results_202606_LLM_GA/**/*.csv
+!SweetDB_results_202606_LLM_GA/**/*.json
+!SweetDB_results_202606_LLM_GA/**/*.png
+!SweetDB_results_202606_LLM_GA/**/*.svg
+!SweetDB_results_202606_LLM_GA/**/*.md
+!SweetDB_results_202606_LLM_GA/**/*.py
+!SweetDB_results_202606_LLM_GA/**/*.sh

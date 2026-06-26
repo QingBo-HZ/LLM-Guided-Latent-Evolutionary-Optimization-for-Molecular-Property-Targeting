@@ -1,0 +1,5 @@
+method,label,mean,sd,seed_values
+A,Random- Seeded,1.0,0.0,1;1;1;1;1
+B,SweetDB- Seeded,2.0,1.0,2;3;3;1;1
+C,LLM- Initialized,7.0,2.449489742783178,6;6;4;9;10
+D,Iterative LLM-Guided,4.4,3.9115214431215892,7;2;1;2;10
