@@ -1,0 +1,83 @@
+{
+  "task": "Constrained Sweetness Potency Optimization",
+  "objective": "constrained_sweetness",
+  "ga_fitness": "score = pred_logSw + 0.50*P_sweet - 0.80*max(0, p_threshold-P_sweet) - 0.50*max(0, D_OOD-OOD_p95)/OOD_p95",
+  "final_scoring": "decode -> strict re-encode -> re-score -> descriptor filter -> final_score",
+  "init_mode": "group_d_llm_iterative",
+  "seed_source": "Group_D_LLM_prior_seed_with_online_reflection",
+  "version": "ABCD_v8_hard_metrics_0622_D_s2029",
+  "seed": 2029,
+  "pop_size": 30,
+  "n_gen_requested": 12,
+  "n_gen_finished": 12,
+  "elite_size": 3,
+  "cross_prob": 0.38,
+  "mut_prob": 0.14,
+  "mut_sigma": 0.22,
+  "lambda_ood": 0.35,
+  "lambda_reg_uncertainty": 0.25,
+  "lambda_desc": 0.5,
+  "lambda_llm": 0.1,
+  "logsw_score_cap": 3.5,
+  "success_p_sweet": 0.8,
+  "success_logsw_for_progress": 2.6,
+  "success_ood": 7.2947579908370965,
+  "llm_seed_policy": "LLM prior + basic chemistry gate only; GA fitness is not used to reject LLM seeds",
+  "llm_online_injections": [
+    {
+      "generation": 3,
+      "generated_basic_gate_count": 3,
+      "strict_bpe_injected_count": 1,
+      "replace_indices": [
+        10
+      ],
+      "acceptance_rule": "locally_refined candidate_score >= incumbent_score + min_gain and population quantile floor and novelty >= min_novelty"
+    },
+    {
+      "generation": 6,
+      "generated_basic_gate_count": 3,
+      "strict_bpe_injected_count": 1,
+      "replace_indices": [
+        19
+      ],
+      "acceptance_rule": "locally_refined candidate_score >= incumbent_score + min_gain and population quantile floor and novelty >= min_novelty"
+    },
+    {
+      "generation": 9,
+      "generated_basic_gate_count": 3,
+      "strict_bpe_injected_count": 0,
+      "replace_indices": [],
+      "acceptance_rule": "locally_refined candidate_score >= incumbent_score + min_gain and population quantile floor and novelty >= min_novelty"
+    }
+  ],
+  "unique_smiles_constraint": false,
+  "unique_smiles_constraint_records": [],
+  "best_score_ga_final": 4.048469543457031,
+  "mean_score_ga_final": 3.947839617729187,
+  "best_final_score": 3.6014981269836426,
+  "mean_final_score": 2.483391408522924,
+  "top10_mean_final_score": 3.2082600803375243,
+  "best_pred_logsw_reencoded": 3.442322254180908,
+  "mean_pred_logsw_reencoded": 2.511921183268229,
+  "reliable_candidate_count": 4,
+  "reliable_candidate_rate": 0.13333333333333333,
+  "unique_reliable_candidate_count": 4,
+  "unique_reliable_candidate_rate": 0.13333333333333333,
+  "validity_final": 1.0,
+  "valid_count_final": 30,
+  "unique_smiles_count_final": 25,
+  "unique_smiles_ratio_final": 0.8333333333333334,
+  "diversity_final": 0.8445131875784249,
+  "best_record_so_far": {
+    "generation": 11,
+    "idx": 17,
+    "score_ga": 4.048469543457031,
+    "p_sweet": 0.966187596321106,
+    "pred_logsw": 3.565375566482544,
+    "pred_logsw_clipped": 3.5,
+    "d_ood": 6.226260662078857,
+    "d_ood_norm": 0.08036045730113983
+  },
+  "time_sec_total": 174.75890040397644,
+  "n_evaluations_total": 360
+}
