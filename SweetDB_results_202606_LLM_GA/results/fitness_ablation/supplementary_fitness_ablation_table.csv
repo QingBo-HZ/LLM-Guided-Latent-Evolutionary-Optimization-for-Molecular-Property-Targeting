@@ -1,0 +1,5 @@
+Method,Fitness used during GA,Sweetness gate,Dominant optimization signal,Dual-endpoint hits,Hits per seed,Predicted logSw (mean ± SD),"Real Vina (mean ± SD, kcal/mol)",Interpretation
+Sweet-only,Latent sweetness regressor,No,predicted logSw,6,1.2,2.39 ± 0.14,-7.30 ± 0.26,"High sweetness signal, moderate docking support"
+Docking-only,Docking surrogate,No,predicted Vina support,5,1.0,2.39 ± 0.28,-8.28 ± 0.15,"Strong docking signal, weaker sweetness enrichment"
+Gate+Sweet,Sweetness gate + latent sweetness regressor,Yes,P(sweet)-filtered predicted logSw,7,1.4,2.40 ± 0.15,-7.45 ± 0.63,Best dual-endpoint enrichment in this ablation
+Gate+Docking,Sweetness gate + docking surrogate,Yes,P(sweet)-filtered Vina support,5,1.0,2.29 ± 0.13,-7.90 ± 0.16,Docking-oriented but less enriched for the dual endpoint
