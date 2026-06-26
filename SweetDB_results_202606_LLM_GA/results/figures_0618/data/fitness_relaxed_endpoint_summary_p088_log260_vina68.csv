@@ -1,0 +1,5 @@
+method,n_seeds,high_sweet_mean,dock_supported_mean,both_relaxed_mean
+Sweet-only,5,1.8,6.0,1.2
+Docking-only,5,0.8,10.0,0.8
+Gate+Sweet,5,1.8,4.2,1.4
+Gate+Docking,5,0.6,9.2,0.6
