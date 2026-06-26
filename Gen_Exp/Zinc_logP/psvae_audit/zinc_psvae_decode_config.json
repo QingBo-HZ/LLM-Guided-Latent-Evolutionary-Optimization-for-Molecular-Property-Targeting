@@ -1,0 +1,18 @@
+{
+  "accepted_zinc_psvae_ckpt": "/root/autodl-tmp/sweeteners_evolve/QM9_test/PS-VAE/ckpts/lightning_logs/version_8_zinc/checkpoints/epoch=19-step=124740.ckpt",
+  "audit_basis": "freshly encode ZINC training SMILES with the same checkpoint, then decode those latents",
+  "recommended_decode": {
+    "max_atom_num": 80,
+    "add_edge_th": 0.45,
+    "temperature": 0.3,
+    "decode_attempts_per_latent_for_ga": 3
+  },
+  "audit_results": {
+    "n200_attempt1_default_0p55_0p50_single_validity": 0.75,
+    "n200_attempt1_best_0p45_0p30_single_validity": 0.755,
+    "n200_attempt3_best_0p45_0p30_single_attempt_validity": 0.7616666666666667,
+    "n200_attempt3_best_0p45_0p30_latent_any_valid_rate": 0.85,
+    "n80_sweep_best_single_validity": 0.875
+  },
+  "decision": "checkpoint passes the >=60% gate; for paper-grade GA decoding use multi-sample decode and report both per-attempt validity and latent-level any-valid coverage"
+}

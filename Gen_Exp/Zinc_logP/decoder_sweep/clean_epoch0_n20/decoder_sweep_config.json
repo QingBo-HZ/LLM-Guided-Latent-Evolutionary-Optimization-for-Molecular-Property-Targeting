@@ -1,0 +1,50 @@
+{
+  "ckpt": "/root/autodl-tmp/sweeteners_evolve/QM9_test/PS-VAE/ckpts/zinc_deep_v2_clean_1gpu_20260514_140051/lightning_logs/version_0/checkpoints/epoch=0-step=6237.ckpt",
+  "latent": "/root/autodl-tmp/sweeteners_evolve/Gen_Exp/Zinc_logP/train/zinc_logp_latent.npy",
+  "out_dir": "/root/autodl-tmp/sweeteners_evolve/Gen_Exp/Zinc_logP/decoder_sweep/clean_epoch0_n20",
+  "gpu": 0,
+  "seed": 42,
+  "n_samples": 20,
+  "max_atom_nums": "40,60,80",
+  "add_edge_ths": "0.30,0.45,0.55,0.70",
+  "temperatures": "0.10,0.30,0.50",
+  "device": "cuda:0",
+  "sample_indices": [
+    154440,
+    143179,
+    40204,
+    194692,
+    167583,
+    151892,
+    25566,
+    17809,
+    130618,
+    102420,
+    86408,
+    17150,
+    89881,
+    171334,
+    18793,
+    146825,
+    156867,
+    87577,
+    139161,
+    105062
+  ],
+  "max_atom_nums_list": [
+    40,
+    60,
+    80
+  ],
+  "add_edge_ths_list": [
+    0.3,
+    0.45,
+    0.55,
+    0.7
+  ],
+  "temperatures_list": [
+    0.1,
+    0.3,
+    0.5
+  ]
+}
