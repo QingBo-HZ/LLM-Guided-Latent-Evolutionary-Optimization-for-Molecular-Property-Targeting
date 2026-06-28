@@ -2,6 +2,8 @@
 
 This directory contains the SweetDB / sweetener application experiments for LLM-guided latent evolutionary optimization. It is a curated export of the 2026-06 SweetDB runs, including the main four-method experiment, the fitness ablation, real docking evaluation, and paper-ready figure panels.
 
+**Server note:** These SweetDB experiments were run on a separate machine. This folder is the already-uploaded curated GitHub export for the third dataset, not an active data/training workspace on the current QM9/ZINC server.
+
 ## Scope
 
 The PS-VAE backbone is not duplicated here because the repository already contains the shared PS-VAE code under `QM9_test/PS-VAE/`. The scripts in this folder add the SweetDB-specific latent GA, LLM seed/reflection intervention, gated sweetness fitness, docking-aware evaluation, and figure generation logic.
