@@ -1,21 +1,45 @@
-# LLM-Guided-Latent-Evolutionary-Optimization-for-Molecular-Property-Targeting
+# LLM-Guided Latent Evolutionary Optimization for Molecular Property Targeting
 
 LLM-guided latent-space genetic optimization for molecular property targeting,
 with a real-world sweetener discovery application on the SweetDB / SweetSpaceDB
 datasets.
 
-This repository develops a single framework that combines:
+This repository contains the code and curated result exports for LLM-guided
+molecular property optimization in latent space. The project combines PS-VAE
+molecular representations, latent-space genetic algorithms, LLM-based seed
+generation, iterative LLM feedback, and property-specific evaluation pipelines.
 
-- a **PS-VAE** latent molecular representation
-- a **latent-space genetic algorithm** (latent GA)
-- **LLM-generated seeds** and **LLM reflection / re-injection** during evolution
-- a **gated sweet-fitness** with external gold-standard evaluation
-  (latent sweet-likeness, predicted sweetness, real Vina docking)
+The framework is developed and validated through three progressively more
+realistic settings, all sharing the same PS-VAE backbone under
+`QM9_test/PS-VAE/`:
 
-and validates it on three progressively more realistic settings: a QM9
-target-property benchmark, a ZINC logP transfer experiment, and finally the
-**SweetDB sweetener discovery application**, which is the reported target of
-this work and the basis of the BIBM 2026 submission.
+- **QM9 target-property benchmark** (`Main_results_202604_LLM_GA/`,
+  `Ablation_1/`) — framework-level validation of the latent GA, LLM-init,
+  and online LLM reflection on a controlled benchmark task.
+- **ZINC logP transfer and PS-VAE audit** (`Gen_Exp/`,
+  `QM9_test/PS-VAE/`) — checks of reconstruction validity, decoder sweeps,
+  and latent-space transferability before applying the framework to the
+  real application.
+- **SweetDB / SweetSpaceDB sweetener discovery** (`SweetDB_results_202606_LLM_GA/`)
+  — the reported application, the basis of the BIBM 2026 submission, where
+  the framework is used to generate sweet-like, predicted-high-sweetness,
+  docking-supported molecules under a gated sweet-fitness and an external
+  gold-standard endpoint.
+
+## Project Scope
+
+The project is organized around three datasets / application settings:
+
+| Dataset / task | Purpose | Current server status | Repository location |
+| --- | --- | --- | --- |
+| QM9 | Main target-property optimization benchmark, focused on molecular property targeting in PS-VAE latent space. | Present on this server. | `Main_results_202604_LLM_GA/`, `Ablation_1/`, `QM9_test/PS-VAE/` |
+| ZINC / logP | Transfer experiment for ZINC logP optimization and PS-VAE reconstruction / decoding audits. | Present on this server. | `Gen_Exp/`, `QM9_test/PS-VAE/` |
+| SweetDB / sweeteners | Sweetener discovery application with SweetDB seeds, gated sweetness fitness, docking evaluation, and final figure exports. | Run on a separate machine; the curated export has already been uploaded to GitHub. | `SweetDB_results_202606_LLM_GA/` |
+
+Only the QM9 and ZINC workflows are expected to be runnable from the current
+server layout. SweetDB paths in the exported scripts may point to the original
+remote machine and should be treated as provenance / reproduction notes unless
+they are adapted to a new environment.
 
 ## Application Target: SweetDB / SweetSpaceDB Sweetener Discovery
 
@@ -109,6 +133,18 @@ documented at the top of the directory's own README. Large local-only
 artifacts (raw datasets, checkpoints, latent `.npy` arrays, full generation
 histories, docking work folders, API keys, molecule archives) are
 intentionally excluded from version control.
+
+## Notes On The Codebase
+
+- Local absolute paths in older scripts reflect the original experiment
+  server layout and may need editing before rerunning.
+- Secret-bearing configuration files should stay out of Git. API credentials
+  must be provided through local environment variables or machine-local
+  config files.
+- The SweetDB export is part of the project record, but the current server
+  should be treated as the QM9/ZINC working environment; SweetDB work is
+  expected to run on a separate machine and only its curated export lives
+  in this repository.
 
 ## License
 
