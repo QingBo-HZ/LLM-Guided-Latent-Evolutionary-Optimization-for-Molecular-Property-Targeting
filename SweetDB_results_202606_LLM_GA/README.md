@@ -1,5 +1,16 @@
 # SweetDB LLM-Guided Latent GA Application
 
+> **BIBM 2026 submission main result package.** This directory is the primary
+> experimental result bundle for the BIBM 2026 submission. Its central claim
+> is that LLM-generated sweetener-like seeds plus a gated sweet-fitness give
+> a practical way to perform low-data sweetener discovery, and that online
+> LLM reflection adds measurable post-intervention improvements on top of an
+> already strong one-shot LLM-initialization baseline. See the root
+> `README.md` ("Application Target" section) for the paper-level framing
+> and `SweetDB_paper_story_BIBM2026.md` (not in this repository) for the
+> full BIBM paper story.
+
+
 This directory contains the SweetDB / sweetener application experiments for LLM-guided latent evolutionary optimization. It is a curated export of the 2026-06 SweetDB runs, including the main four-method experiment, the fitness ablation, real docking evaluation, and paper-ready figure panels.
 
 ## Scope
